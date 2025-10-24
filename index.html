@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Image Blur Tool</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Advanced Image Blur Tool</h1>
+            <div class="credits">Created by Law and Douma</div>
+        </div>
+        
+        <div class="upload-area" id="uploadArea">
+            <input type="file" id="fileInput" accept="image/*">
+            <div class="upload-icon">📁</div>
+            <p>Klicke oder ziehe ein Bild hierher</p>
+            <span class="file-types">Unterstützt: JPG, PNG, GIF, WEBP</span>
+        </div>
+
+        <div class="settings-panel">
+            <div class="setting-group">
+                <label for="blurRange">Blur Stärke</label>
+                <input type="range" id="blurRange" min="0" max="20" step="0.5" value="0">
+                <span id="blurValue">0px</span>
+            </div>
+
+            <div class="setting-group">
+                <label for="brightnessRange">Helligkeit</label>
+                <input type="range" id="brightnessRange" min="0" max="200" step="1" value="100">
+                <span id="brightnessValue">100%</span>
+            </div>
+
+            <div class="setting-group">
+                <label for="contrastRange">Kontrast</label>
+                <input type="range" id="contrastRange" min="0" max="200" step="1" value="100">
+                <span id="contrastValue">100%</span>
+            </div>
+
+            <div class="setting-group">
+                <label for="saturationRange">Sättigung</label>
+                <input type="range" id="saturationRange" min="0" max="200" step="1" value="100">
+                <span id="saturationValue">100%</span>
+            </div>
+
+            <div class="setting-group">
+                <label for="rotationRange">Rotation</label>
+                <input type="range" id="rotationRange" min="0" max="360" step="1" value="0">
+                <span id="rotationValue">0°</span>
+            </div>
+
+            <div class="setting-group">
+                <label for="blurType">Blur Typ</label>
+                <select id="blurType">
+                    <option value="blur">Standard Blur</option>
+                    <option value="gaussian">Gaussian Blur</option>
+                </select>
+            </div>
+
+            <div class="setting-group">
+                <label>
+                    <input type="checkbox" id="grayscale">
+                    Graustufen
+                </label>
+                <label>
+                    <input type="checkbox" id="invert">
+                    Invertieren
+                </label>
+                <label>
+                    <input type="checkbox" id="sepia">
+                    Sepia
+                </label>
+            </div>
+        </div>
+
+        <div class="image-container">
+            <div class="image-wrapper">
+                <canvas id="imageCanvas"></canvas>
+                <div class="image-info" id="imageInfo">Kein Bild geladen</div>
+            </div>
+        </div>
+
+        <div class="actions">
+            <button id="resetBtn" class="btn-secondary">Zurücksetzen</button>
+            <button id="downloadBtn" class="btn-primary" disabled>Bild herunterladen</button>
+        </div>
+
+        <div class="footer">
+            <div class="credits-footer">© 2024 Developed by Law - Advanced Image Processing Tool</div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
